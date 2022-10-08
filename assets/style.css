@@ -1,0 +1,10 @@
+
+.search-bar {
+    margin-left: 20px;
+}
+
+.weather-result-container {
+    display: block;
+    justify-items: center;
+    margin-left: 20px;
+}
