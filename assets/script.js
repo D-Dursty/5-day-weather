@@ -4,8 +4,19 @@ var locationInputEl = document.querySelector('#city-search-bar');
 var searchButton = document.querySelector('#search-button'); 
 var locationNameHeader = document.getElementById('location-name');
 var apikey = "d0a8f37b50d92626e9a300a3ada7866b";
+var today = document.getElementById('day1')
+var day2 = document.getElementById('day2');
+var day3 = document.getElementById('day3');
+var day4= document.getElementById('day4');
+var day5 = document.getElementById('day5');
 
 //click event to search
+function setDate(){
+    var day1 = moment().format('MMM DD, YYYY');
+    today.textContent(day1);
+}
+
+
 
 function getAPI(locationName){ 
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + locationName + "&appid=" + apikey;
