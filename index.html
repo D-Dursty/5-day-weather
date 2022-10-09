@@ -15,57 +15,61 @@
           <p class="lead d-flex justify-content-center">Use the search bar to check the next five days of weather in your <area shape="" coords="" href="" alt=""></p>
         </div>
     <section class="search-bar">
-    <form class="search-form needs-validation" novalidate>  
-        <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationCustom03">City</label>
-              <input type="text" class="city-search-bar form-control" id="validationCustom03" required>
-              <div class="invalid-feedback">
-                Please provide a valid city.
-              </div>
-              <button class="search-button btn btn-primary" type="submit">Submit form</button>
-    </form>
-    <section id="location-header">
+        <form id = "search-cities">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="city-search-bar"
+                placeholder="Input city name"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id ="search-button">Select</button>
+          </form>
+    </section>
+
+    <section class="location-header">
     <H1 id="location-name">Seattle</H1>
     </section>
     
     <section class="weather-result-container">
     
         <div class="card lg-light mb-3" style="max-width: 18rem;">
-        <div class="date1 card-header">Header</div>
-        <div class="card-body">
-          <h5 class="temp1 card-title">Light card title</h5>
-          <p class="wind1 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="humid1 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 id="day1"></h5>
+                
+                     <p id="temp1"><span><bold>Temp:</bold></span></p>
+                    <p id="wind1"><span>Wind:</span></p>
+                    <p id="humid1"><span>Humidity</span></p>
         </div>
-    <div class="card lg-light mb-3" style="max-width: 18rem;">
-        <div class="date2 card-header">Header</div>
-        <div class="card-body">
-          <h5 class="temp2 card-title">Light card title</h5>
-          <p class="wind2 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="humid2 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card lg-light mb-3" style="max-width: 18rem;">
+            <h5 id="day2"></h5>
+                
+                     <p id="temp2"><span><bold>Temp:</bold></span></p>
+                    <p id="wind2"><span>Wind:</span></p>
+                    <p id="humid2"><span>Humidity</span></p>
         </div>
-    <div class="card lg-light mb-3" style="max-width: 18rem;">
-        <div class="date3 card-header">Header</div>
-        <div class="card-body">
-          <h5 class="temp3 card-title">Light card title</h5>
-          <p class="wind3 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="humid4 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card lg-light mb-3" style="max-width: 18rem;">
+            <h5 id="day3"></h5>
+                
+                     <p id="temp3"><span><bold>Temp:</bold></span></p>
+                    <p id="wind3"><span>Wind:</span></p>
+                    <p id="humid3"><span>Humidity</span></p>
         </div>
-    <div class="card lg-light mb-3" style="max-width: 18rem;">
-        <div class="date4 card-header">Header</div>
-        <div class="card-body">
-          <h5 class="temp4 card-title">Light card title</h5>
-          <p class="wind4 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="humid4 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card lg-light mb-3" style="max-width: 18rem;">
+            <h5 id="day4"></h5>
+                
+                     <p id="temp4"><span><bold>Temp:</bold></span></p>
+                    <p id="wind4"><span>Wind:</span></p>
+                    <p id="humid4"><span>Humidity</span></p>
         </div>
-    <div class="card lg-light mb-3" style="max-width: 18rem;">
-        <div class="date5 card-header">Header</div>
-        <div class="card-body">
-          <h5 class="temp5 card-title">Light card title</h5>
-          <p class="wind5 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="humid5 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card lg-light mb-3" style="max-width: 18rem;">
+                    <h5 id="day5"></h5>
+                
+                    <p id="temp5"><span><bold>Temp:</bold></span></p>
+                    <p id="wind5"><span>Wind:</span></p>
+                    <p id="humid5"><span>Humidity</span></p>
         </div>
+        
       
     </section>
       </div>

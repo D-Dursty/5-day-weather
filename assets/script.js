@@ -1,37 +1,30 @@
-console.log('hello world');
+
 var searchForm = document.querySelector('.search-form');
-var cityInputEl = document.querySelector('.city-search-bar');
-var searchButton = document.querySelector('.search-button'); 
+var locationInputEl = document.querySelector('#city-search-bar');
+var searchButton = document.querySelector('#search-button'); 
 var locationNameHeader = document.getElementById('location-name');
-apikey = "97b38167c60b6e9a3150e694ec7d645d"
-apiURL = "https://api.openweathermap.org/data/2.5/weather?"
+var apikey = "d0a8f37b50d92626e9a300a3ada7866b";
 
-var formSubmitHandler = function(event) {
-    event.preventDefault();
-
-    var city = cityInputEl.value.trim();
-
-    if (city) {
-        getCityName(city);
-
-        locationNameHeader.textContent = '';
-        cityInputEl.value = '';
-    } else {
-        alert('Please enter a searchable location.');
-    }
-    console.log('yahoo');
-};
-
-searchButton.addEventListener('submit', formSubmitHandler);
 //click event to search
 
-var searchButtonHandler = function (event) {
-    var language = event.target.getAttribute('data-language');
+function getAPI(locationName){ 
+    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + locationName + "&appid=" + apikey;
 
-    if(language) {
-        getFeaturedLocation(language);
-    }
+    fetch(apiURL, {
+        cache: "reload",
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+})
 }
+searchButton.addEventListener('click', function searchLocation(event) {
+    event.preventDefault();
+   getAPI(locationInputEl.value) 
+ console.log(locationInputEl.value);
+})
 
 // retrieve geographical coordinates for a searched city
 
@@ -40,5 +33,4 @@ var searchButtonHandler = function (event) {
 //present city weather conditions for 'today', 'tomorrow' + following three days
 //conditions = city name, the date, icon representation of weather conditions, temperature, humidity, wind speed
 
-//use localStorage for persistent data (city is added to seach history to easily access weather conditions) saved in search bar 
-
+//use localStorage for persistent data (city is added to seach history to easily access weather conditions) saved in search bar
