@@ -1,15 +1,25 @@
+* {
+    text-decoration: none;
+}
+
+.jumbotron {
+    background-image: linear-gradient(rgb(156, 212, 241), rgb(232, 250, 252), rgb(131, 159, 164));
+}
 
 .search-bar {
-    width: 25%;
+    width: 100%;
     margin-left: 20px;
     margin-top: 5%;
 }
 
+.form-group, .btn {
+    width:25%;
+}
+
+
 
 .location-header {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 5%;
+    display: inline-block;
     margin-left: 30%;
 }
 

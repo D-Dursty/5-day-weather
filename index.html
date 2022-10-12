@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="./assets/style.css">
     <script
       type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-    ></script>
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <title>5-Day Weather</title>
 </head>
+
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4 d-flex justify-content-center">5-day weather forecast</h1>
           <p class="lead d-flex justify-content-center">Use the search bar to check the next five days of weather in your <area shape="" coords="" href="" alt=""></p>
-        </div>
+    </div>
+    
     <section class="search-bar">
         <form id = "search-cities">
             <div class="form-group">
@@ -30,53 +31,57 @@
             </div>
             <button type="submit" class="btn btn-primary btn-block" id ="search-button">Select</button>
           </form>
-    </section>
+          
+          <section class="location-header">
+              <h1 id="location-name"></h1> 
+              <h4 id="date"></h4>
+              <img id="icon"/>
+                <ul>
+                  <li id="temp-main"></li>
+                  <li id="wind-main"></li>
+                  <li id="humid-main"></li>
+                </ul>
+  
+          </section>
+   </section>
 
-    <section class="location-header">
-    <H1 id="location-name">Seattle</H1>
-    </section>
-    
-    <section class="weather-result-container">
-    
-        <div class="card lg-light mb-3" style="max-width: 18rem;">
-            <h5 id="day1"></h5>
-                
-                     <p id="temp1"><span><bold>Temp:</bold></span></p>
-                    <p id="wind1"><span>Wind:</span></p>
-                    <p id="humid1"><span>Humidity</span></p>
-        </div>
+   <section class="weather-result-container">
+        
         <div class="card lg-light mb-3" style="max-width: 18rem;">
             <h5 id="day2"></h5>
                 
-                     <p id="temp2"><span><bold>Temp:</bold></span></p>
-                    <p id="wind2"><span>Wind:</span></p>
-                    <p id="humid2"><span>Humidity</span></p>
+                    <li id="temp2"><span><bold>Temp:</bold></span></li>
+                    <li id="wind2"><span>Wind:</span></li>
+                    <li id="humid2"><span>Humidity</span></li>
         </div>
         <div class="card lg-light mb-3" style="max-width: 18rem;">
             <h5 id="day3"></h5>
                 
-                     <p id="temp3"><span><bold>Temp:</bold></span></p>
-                    <p id="wind3"><span>Wind:</span></p>
-                    <p id="humid3"><span>Humidity</span></p>
+                    <li id="temp3"><span><bold>Temp:</bold></span></li>
+                    <li id="wind3"><span>Wind:</span></li>
+                    <li id="humid3"><span>Humidity</span></li>
         </div>
         <div class="card lg-light mb-3" style="max-width: 18rem;">
             <h5 id="day4"></h5>
                 
-                     <p id="temp4"><span><bold>Temp:</bold></span></p>
-                    <p id="wind4"><span>Wind:</span></p>
-                    <p id="humid4"><span>Humidity</span></p>
+                    <li id="temp4"><span><bold>Temp:</bold></span></li>
+                    <li id="wind4"><span>Wind:</span></li>
+                    <li id="humid4"><span>Humidity</span></li>
         </div>
         <div class="card lg-light mb-3" style="max-width: 18rem;">
                     <h5 id="day5"></h5>
                 
-                    <p id="temp5"><span><bold>Temp:</bold></span></p>
-                    <p id="wind5"><span>Wind:</span></p>
-                    <p id="humid5"><span>Humidity</span></p>
+                    <li id="temp5"><span><bold>Temp:</bold></span></li>
+                    <li id="wind5"><span>Wind:</span></li>
+                    <li id="humid5"><span>Humidity</span></li>
         </div>
         
       
     </section>
-      </div>
+    </div>
+    <footer>
+
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="./assets/script.js"></script>

@@ -1,27 +1,35 @@
+var apikey = "d0a8f37b50d92626e9a300a3ada7866b";
+var weatherIcon = "https://openweathermap.org/img/wn/${(data.weather[0].icon)}.png"
 
 var searchForm = document.querySelector('.search-form');
 var locationInputEl = document.querySelector('#city-search-bar');
 var searchButton = document.querySelector('#search-button'); 
 var locationNameHeader = document.getElementById('location-name');
-var apikey = "d0a8f37b50d92626e9a300a3ada7866b";
-var today = document.getElementById('day1')
+var date = document.getElementById('date');
+var tempMain = document.getElementById('temp-main');
+var windMain = document.getElementById('wind-main');
+var humidMain = document.getElementById('humid-main');
+
+var weatherContainer = document.querySelector('.weather-result-container');
+
+var icon = document.getElementById('icon');
+var today = document.getElementById('day1');
 var day2 = document.getElementById('day2');
 var day3 = document.getElementById('day3');
 var day4= document.getElementById('day4');
 var day5 = document.getElementById('day5');
 
+
 //click event to search
-function setDate(){
-    var day1 = moment().format('MMM DD, YYYY');
-    today.textContent(day1);
-}
 
 
 
-function getAPI(locationName){ 
-    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + locationName + "&appid=" + apikey;
+function getCityAPI(locationName){ 
+    locationNameHeader.textContent = '';
 
-    fetch(apiURL, {
+    var firstQueryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + locationName + "&appid=" + apikey + "&units=imperial";
+
+    fetch(firstQueryURL, {
         cache: "reload",
         })
         .then(function (response) {
@@ -29,13 +37,39 @@ function getAPI(locationName){
         })
         .then(function (data) {
             console.log(data);
-})
+            locationNameHeader.textContent = data.name;
+         //   icon.textContent = "https://openweathermap.org/img/wn/${(data.weather[0].icon)}.png"
+            date.textContent = moment(data.tm).format("ddd MMM DD, YYYY")
+            tempMain.textContent = "Temp: " + data.main.temp + " °F";
+            windMain.textContent = "Wind: " + data.wind.speed + " mph";
+            humidMain.textContent = "Humidity: " + data.main.humidity + " %";
+});
+locationInputEl.value
+
+function nextFiveAPI(locationName) {
+    var nextFiveURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + locationName + "&appid=" + apikey + "&units=imperial";
+
+    fetch(nextFiveURL, {
+        cache: "reload",
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        var nextFiveDataArray = data.list;
+       // console.log(nextFiveDataArray)
+    }) 
+
 }
-searchButton.addEventListener('click', function searchLocation(event) {
+    
+}
+searchButton.addEventListener('click', function(event) {
     event.preventDefault();
-   getAPI(locationInputEl.value) 
- console.log(locationInputEl.value);
-})
+         getCityAPI(locationInputEl.value) 
+         
+
+});
+
 
 // retrieve geographical coordinates for a searched city
 
