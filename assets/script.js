@@ -43,9 +43,10 @@ function getCityAPI(locationName){
             tempMain.textContent = "Temp: " + data.main.temp + " °F";
             windMain.textContent = "Wind: " + data.wind.speed + " mph";
             humidMain.textContent = "Humidity: " + data.main.humidity + " %";
+        nextFiveAPI(locationName);
 });
-locationInputEl.value
-
+// locationInputEl.value
+}
 function nextFiveAPI(locationName) {
     var nextFiveURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + locationName + "&appid=" + apikey + "&units=imperial";
 
@@ -57,15 +58,24 @@ function nextFiveAPI(locationName) {
     })
     .then(function (data) {
         var nextFiveDataArray = data.list;
-       // console.log(nextFiveDataArray)
+        console.log(data);
+        //looping through list array
+        for (var i = 0; i < nextFiveDataArray.length; i++){
+            //if dt_txt contains 09:00:00
+            if(nextFiveDataArray[i].dt_txt.includes('09:00:00')){
+            //console the items that match the condition out
+                var nextFiveDates = nextFiveDataArray[i];
+            }
+        }
     }) 
 
 }
     
-}
+
 searchButton.addEventListener('click', function(event) {
     event.preventDefault();
          getCityAPI(locationInputEl.value) 
+
          
 
 });
@@ -73,7 +83,7 @@ searchButton.addEventListener('click', function(event) {
 
 // retrieve geographical coordinates for a searched city
 
-//present date for 'today' + following 4 days
+//present date for 'today' + following 5 days
 
 //present city weather conditions for 'today', 'tomorrow' + following three days
 //conditions = city name, the date, icon representation of weather conditions, temperature, humidity, wind speed
